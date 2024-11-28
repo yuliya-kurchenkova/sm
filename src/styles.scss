@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+$dark-color: #000000;
+$light-color: #ffffff;
+
+:root {
+  --light-color: #ffffff;
+  --primary-color: #AE7AFF;
+  --dark-color: #000000;
+}
+
+body {
+  background-color: $dark-color;
+  color: $light-color
+}
+
+.btn {
+  border: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  font-weight: 700;
+  line-height: 24px;
+}
