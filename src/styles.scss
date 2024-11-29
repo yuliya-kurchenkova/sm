@@ -9,6 +9,15 @@ $light-color: #ffffff;
   --dark-color: #000000;
 }
 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "JetBrains Mono", sans-serif;
   background-color: $dark-color;
@@ -25,8 +34,14 @@ body {
   line-height: 24px;
 }
 
-.subTitle {
+.title {
   font-size: 18px;
   font-weight: 800;
   line-height: 24px;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 }
