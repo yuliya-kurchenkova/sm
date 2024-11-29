@@ -25,6 +25,7 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
+    margin-bottom: 10px;
 
     &-input {
       padding: 12px 20px;
@@ -39,5 +40,9 @@
       line-height: 21px;
       color:rgba(255, 255, 255, 0.75);
     }
+  }
+
+  &__label:last-of-type {
+    margin-bottom: 50px;
   }
 }
