@@ -7,10 +7,10 @@ import { Test_Account } from '../../interfaces/account.interface';
 })
 export class ProfileService {
   http = inject(HttpClient);
-  baseUrl = 'https://icherniakov.ru/yt-course/account';
+  baseUrl = 'https://icherniakov.ru/yt-course';
 
   getTestAccounts() {
-    return this.http.get<Test_Account[]>(`${this.baseUrl}/test_accounts`)
+    return this.http.get<Test_Account[]>(`${this.baseUrl}/account/test_accounts`)
   }
 }
 
