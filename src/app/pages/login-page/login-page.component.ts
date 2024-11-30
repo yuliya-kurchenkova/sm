@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/auth/auth-service/auth.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +10,8 @@ import { AuthService } from '../../shared/auth/auth-service/auth.service';
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
-  authService = inject(AuthService)
+  authService = inject(AuthService);
+  router = inject(Router);
 
   form: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -20,7 +22,10 @@ export class LoginPageComponent {
   onSubmit() {
     if (this.form.valid) {
       this.authService.login(this.form.value)
-      .subscribe(data => console.log(data)) // status 422 так как в свагере application/x-www-form-urlencoded
+      .subscribe(data => {
+        console.log(data);
+        this.router.navigate(['']);
+      }) 
     }
   }
 }
