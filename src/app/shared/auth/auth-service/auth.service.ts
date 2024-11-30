@@ -10,6 +10,9 @@ export class AuthService {
   baseUrl = 'https://icherniakov.ru/yt-course/auth';
 
   login(body: LoginBody) {
-    return this.http.post(`${this.baseUrl}/token`, body)
+    const fd = new FormData();
+    fd.append('username', body.username);
+    fd.append('password', body.password);
+    return this.http.post(`${this.baseUrl}/token`, fd)
   }
 }
