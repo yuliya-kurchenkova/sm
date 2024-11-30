@@ -13,6 +13,10 @@ export class AuthService {
   token: string | null = null;
   refreshToken: string | null = null;
 
+  get isAuth() {
+    return !!this.token;  // Возвращает true, если токен существует
+  }
+
   login(body: LoginBody) {
     const fd = new FormData();
     fd.append('username', body.username);
