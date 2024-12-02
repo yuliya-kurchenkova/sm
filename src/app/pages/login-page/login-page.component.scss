@@ -28,6 +28,7 @@
     margin-bottom: 10px;
 
     &-input {
+      width: 100%;
       padding: 12px 20px;
       border: 1px solid var(--light-color);
       background-color: transparent;
@@ -45,4 +46,24 @@
   &__label:last-of-type {
     margin-bottom: 50px;
   }
+}
+
+.password__input {
+  position: relative;
+}
+
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  display: flex;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #FFFFFFBF;
+  cursor: pointer;
+}
+
+.password-eye-btn.active {
+  color: var(--primary-color);
 }
