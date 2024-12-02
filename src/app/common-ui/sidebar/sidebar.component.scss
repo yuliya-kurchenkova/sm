@@ -1,4 +1,5 @@
 :host {
+  display: block;
   padding: 20px 12px;
   background: rgba(0, 0, 0, 1);
 }
@@ -11,12 +12,14 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  list-style: none;
 }
 
-.sidebar__btn {
-  display: flex;
+.sidebar__link {
+  display: grid;
+  grid-template-columns: 16px 1fr max-content;
   align-items: center;
-  gap: 13px;
+  grid-gap: 12px;
   width: 100%;
   padding: 16px 12px;
   border: none;
@@ -27,7 +30,9 @@
   font-size: 14px;
   line-height: 24px;
   cursor: pointer;
+  text-decoration: none;
 
+  &.active,
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
