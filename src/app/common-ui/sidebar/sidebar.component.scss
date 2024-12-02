@@ -19,7 +19,6 @@
   gap: 13px;
   width: 100%;
   padding: 16px 12px;
-  // margin: 0 12px;
   border: none;
   background: none;
   border-radius: 2px;
@@ -33,5 +32,14 @@
   &:focus-visible {
     background: var(--dark-hover-color);
     color: var(--primary-color);
+
+    &-icon { 
+      color: var(--primary-color);
+    }
+  }
+
+  &-icon {
+    width: 14px;
+    height: 14px;
   }
 }
