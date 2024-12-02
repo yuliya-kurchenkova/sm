@@ -2,23 +2,14 @@
 
 <nav>
   <ul class="sidebar__list">
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="home" class="sidebar__btn-icon"></svg>
-        <span>Моя страница</span>
-      </button>
-    </li>
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="chats" class="sidebar__btn-icon"></svg>
-        <span>Чаты</span>
-      </button>
-    </li>
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="search" class="sidebar__btn-icon"></svg>
-        <span>Поиск</span>
-      </button>
+    <li *ngFor="let item of menuItems">
+      <a 
+        class="sidebar__link" 
+        [routerLink]="item.link"
+        routerLinkActive="active">
+        <svg [icon]="item.icon" class="sidebar__link-icon"></svg>
+        <span>{{ item.label }}</span>
+      </a>
     </li>
   </ul>
 </nav>
