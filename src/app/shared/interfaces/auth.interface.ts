@@ -8,3 +8,5 @@ export interface TokenResponse {
   refresh_token: string,
   token_type: string
 }
+
+export type RefreshToken  = Pick<TokenResponse, "refresh_token">
