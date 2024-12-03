@@ -19,6 +19,14 @@ $light-color: #ffffff;
   padding: 0;
 }
 
+a, a:link, a:visited  {
+  text-decoration: none;
+}
+
+a:hover  {
+  text-decoration: none;
+}
+
 body {
   font-family: "JetBrains Mono", sans-serif;
   background-color: $dark-color;

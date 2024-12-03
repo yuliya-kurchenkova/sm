@@ -2,23 +2,29 @@
 
 <nav>
   <ul class="sidebar__list">
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="home" class="sidebar__btn-icon"></svg>
-        <span>Моя страница</span>
-      </button>
-    </li>
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="chats" class="sidebar__btn-icon"></svg>
-        <span>Чаты</span>
-      </button>
-    </li>
-    <li>
-      <button class="sidebar__btn">
-        <svg icon="search" class="sidebar__btn-icon"></svg>
-        <span>Поиск</span>
-      </button>
+    <li *ngFor="let item of menuItems">
+      <a 
+        class="sidebar__link" 
+        [routerLink]="item.link"
+        routerLinkActive="active">
+        <svg [icon]="item.icon" class="sidebar__link-icon"></svg>
+        <span>{{ item.label }}</span>
+      </a>
     </li>
   </ul>
 </nav>
+
+<p class="sidebar__subscribers-title">Подписчики</p>
+
+@for (subscriber of subscribers$ | async; track subscriber.id) {
+  <app-subscriber-card [profile]="subscriber"></app-subscriber-card>
+}
+
+<div class="sidebar__subscribers">
+  <a 
+    [routerLink]="['/subscribers']"
+    class="sidebar__subscribers-link">
+    Все подписчики
+  </a>
+  <svg icon="arrow" class="sidebar__subscribers-icon"></svg>
+</div>
