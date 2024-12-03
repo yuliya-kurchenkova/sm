@@ -1,0 +1,117 @@
+@import '../../../mixins.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 12px;
+  background: rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+.sidebar__logo {
+  margin: 0 0 20px 16px;
+  width: 61px;
+  height: 74px;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.sidebar__link {
+  display: grid;
+  grid-template-columns: 16px 1fr max-content;
+  align-items: center;
+  grid-gap: 12px;
+  width: 100%;
+  padding: 16px 12px;
+  border: none;
+  background: none;
+  border-radius: 2px;
+  color: var(--light-color);
+  @include font-14-bold;
+  cursor: pointer;
+  text-decoration: none;
+
+  &.active,
+  &:hover,
+  &:focus-visible {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+
+    &-icon { 
+      color: var(--primary-color);
+    }
+  }
+
+  &-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.sidebar__subscribers-title {
+  @include font-12-medium;
+  padding-left: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar__subscribers {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-left: 16px;
+  cursor: pointer;
+
+  &-link { 
+    @include font-12-medium;
+    color: var(--primary-color);
+  }
+}
+
+.sidebar__subscribers-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+}
+
+.sidebar__footer {
+  position: absolute;
+  bottom: 20px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap: 12px;
+  align-items: center;
+  padding: 4px 16px;
+  background: var(--dark-hover-color);
+  width: calc(100% - 20px);
+
+  &.active,
+  &:hover {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+
+    &-icon { 
+      color: var(--primary-color);
+    }
+  }
+
+  &-text {
+    @include font-14-bold;
+    padding-left: 12px;
+    color: var(--primary-color);
+  }
+}
+
+.settings-btn {
+  cursor: pointer;
+  svg {
+    width: 13px;
+    height: 13px;
+    color: var(--primary-color);
+  }
+}

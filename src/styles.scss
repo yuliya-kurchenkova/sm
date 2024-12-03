@@ -7,12 +7,34 @@ $light-color: #ffffff;
   --light-color: #ffffff;
   --primary-color: #AE7AFF;
   --dark-color: #000000;
+  --dark-hover-color: rgba(22, 22, 22, 1);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link, a:visited  {
+  text-decoration: none;
+}
+
+a:hover  {
+  text-decoration: none;
 }
 
 body {
+  height: 100dvh;
   font-family: "JetBrains Mono", sans-serif;
   background-color: $dark-color;
-  color: $light-color
+  color: $light-color;
+  background-image: url('/assets/img/main-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .btn {
@@ -23,10 +45,17 @@ body {
   color: var(--dark-color);
   font-weight: 700;
   line-height: 24px;
+  cursor: pointer;
 }
 
-.subTitle {
+.title {
   font-size: 18px;
   font-weight: 800;
   line-height: 24px;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 }

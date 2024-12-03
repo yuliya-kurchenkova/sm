@@ -1,6 +1,6 @@
 .profile-card {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr) 200px 1fr;
   grid-gap: 32px;
   padding: 32px 24px;
   border: 1px solid var(--light-color);
@@ -9,6 +9,8 @@
     display: grid;
     grid-template-columns: 70px 1fr;
     grid-gap: 20px;
+    justify-self: center;
+    align-self: center;
 
     &-img {
       width: 70px;
@@ -24,10 +26,21 @@
     }
   }
 
+  &__description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    justify-self: center;
+    align-self: center;
+  }
+
   &__tags {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 4px;
+    justify-self: center;
+    align-self: center;
 
     &-item {
       display: inline;
@@ -38,5 +51,10 @@
       font-size: 12px;
       line-height: 16px;
     }
+  }
+
+  &__btn {
+    justify-self: center;
+    align-self: center;
   }
 }
