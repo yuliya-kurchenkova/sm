@@ -28,10 +28,13 @@ a:hover  {
 }
 
 body {
+  height: 100dvh;
   font-family: "JetBrains Mono", sans-serif;
   background-color: $dark-color;
   color: $light-color;
   background-image: url('/assets/img/main-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .btn {
