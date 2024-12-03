@@ -6,6 +6,7 @@
   gap: 20px;
   padding: 20px 12px;
   background: rgba(0, 0, 0, 1);
+  position: relative;
 }
 
 .sidebar__logo {
@@ -79,12 +80,15 @@
 }
 
 .sidebar__footer {
+  position: absolute;
+  bottom: 20px;
   display: grid;
   grid-template-columns: 32px 1fr 16px;
   grid-gap: 12px;
   align-items: center;
   padding: 4px 16px;
   background: var(--dark-hover-color);
+  width: calc(100% - 20px);
 
   &.active,
   &:hover {
