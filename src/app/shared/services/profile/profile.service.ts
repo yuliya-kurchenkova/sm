@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { ProfileSummary, Test_Account } from '../../interfaces/account.interface';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,8 @@ import { map } from 'rxjs';
 export class ProfileService {
   http = inject(HttpClient);
   baseUrl = 'https://icherniakov.ru/yt-course';
+
+  me = signal<Test_Account | null>(null);
 
   getTestAccounts() {
     return this.http.get<Test_Account[]>(`${this.baseUrl}/account/test_accounts`)
@@ -23,6 +25,9 @@ export class ProfileService {
 
   getMeAccount() {
     return this.http.get<Test_Account>(`${this.baseUrl}/account/me`)
+      .pipe(
+        tap((res) => this.me.set(res))
+      )
   }
 }
 

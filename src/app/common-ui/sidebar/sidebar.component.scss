@@ -77,3 +77,37 @@
   height: 18px;
   color: var(--primary-color);
 }
+
+.sidebar__footer {
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap: 12px;
+  align-items: center;
+  padding: 4px 16px;
+  background: var(--dark-hover-color);
+
+  &.active,
+  &:hover {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+
+    &-icon { 
+      color: var(--primary-color);
+    }
+  }
+
+  &-text {
+    @include font-14-bold;
+    padding-left: 12px;
+    color: var(--primary-color);
+  }
+}
+
+.settings-btn {
+  cursor: pointer;
+  svg {
+    width: 13px;
+    height: 13px;
+    color: var(--primary-color);
+  }
+}
