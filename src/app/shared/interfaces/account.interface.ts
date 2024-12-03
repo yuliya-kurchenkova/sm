@@ -10,3 +10,11 @@ export interface Test_Account {
   city: string;
   description: string;
 }
+
+export interface ProfileSummary<T> {
+  items: T[];
+  total: number;
+  page: number;
+  size: number;
+  pages: number;
+}

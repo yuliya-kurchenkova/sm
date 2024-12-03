@@ -13,3 +13,18 @@
     </li>
   </ul>
 </nav>
+
+<p class="sidebar__subscribers-title">Подписчики</p>
+
+@for (subscriber of subscribers$ | async; track subscriber.id) {
+  <app-subscriber-card [profile]="subscriber"></app-subscriber-card>
+}
+
+<div class="sidebar__subscribers">
+  <a 
+    [routerLink]="['/subscribers']"
+    class="sidebar__subscribers-link">
+    Все подписчики
+  </a>
+  <svg icon="arrow" class="sidebar__subscribers-icon"></svg>
+</div>
